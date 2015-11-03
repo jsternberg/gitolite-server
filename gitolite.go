@@ -33,6 +33,7 @@ func realMain() int {
 	}
 
 	config := gitolite.DefaultConfig()
+	config.PublicKeyCallback = gitolite.AllowAll
 	config.AddHostKey(privateKey)
 
 	server := gitolite.New(config)
